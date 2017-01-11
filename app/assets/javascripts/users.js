@@ -3,6 +3,7 @@ $(document).ready(function(){
     
     //Watch For Form submission
     $("#form-submit-btn").click(function(event){
+        console.log("Form Submit btn")
         //Stop default form behavior
         event.preventDefault();
         
@@ -37,6 +38,8 @@ $(document).ready(function(){
         
         //Submit the form
         f.get(0).submit()
+        
+        console.log(response.id)
         //
         
     }

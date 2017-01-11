@@ -9,9 +9,13 @@ class User < ActiveRecord::Base
   
   def save_with_payment
     if valid?
+      puts("Strip Card Token #{stripe_card_token}")
       customer = Stripe::Customer.create(description:email, plan: plan_id, card: stripe_card_token)
+      puts ("Stripe Customer #{customer}")
       self.stripe_customer_token = customer.id
       save!
+    else
+      puts("Not Valid")
     end
   end
 end
