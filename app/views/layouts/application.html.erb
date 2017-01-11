@@ -35,6 +35,12 @@
   </nav>
 
   <div class="container">
+    <!-- Check if there is a flash message  --!>
+    <!--Key is the error, or success  --!>
+    <!-- Value is the message  --!>
+    <% flash.each do |key, value|%>
+      <%=content_tag :div, value, class:"alert alert-#{key}"%>
+    <%end%>
     <%= yield %>
   </div>
 
