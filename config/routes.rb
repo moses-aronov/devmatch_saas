@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   #Create a nested resource
   
-  resource :users  do
+  resources :users  do
     resource :profile
   end
   
